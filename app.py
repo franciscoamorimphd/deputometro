@@ -5,7 +5,19 @@ import plotly.express as px
 import streamlit as st
 
 st.set_page_config(page_title='Deputômetro | Piloto',page_icon='📊',layout='wide')
-st.markdown('''<style>.block-container{padding-top:1.6rem}.stMetric{background:#f4f6f9;border-radius:12px;padding:14px}h1{letter-spacing:-.035em}</style>''',unsafe_allow_html=True)
+st.markdown('''<style>
+.block-container {padding-top:1.6rem}
+/* Cartões claros: texto escuro em qualquer tema do navegador/Streamlit */
+[data-testid="stMetric"] {background:#f4f6f9;border:1px solid #e0e5ec;border-radius:12px;padding:14px}
+[data-testid="stMetric"] [data-testid="stMetricLabel"],
+[data-testid="stMetric"] [data-testid="stMetricLabel"] *,
+[data-testid="stMetric"] [data-testid="stMetricValue"],
+[data-testid="stMetric"] [data-testid="stMetricValue"] *,
+[data-testid="stMetric"] [data-testid="stMetricDelta"],
+[data-testid="stMetric"] [data-testid="stMetricDelta"] * {color:#172638 !important;opacity:1 !important}
+[data-testid="stMetric"] [data-testid="stMetricLabel"] {font-weight:600}
+h1{letter-spacing:-.035em}
+</style>''',unsafe_allow_html=True)
 
 SCHEMAS={
  'deputados':['deputado_id','deputado','partido','uf','legislatura'],
